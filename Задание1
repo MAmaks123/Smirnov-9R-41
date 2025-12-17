@@ -1,0 +1,32 @@
+t = float(input("Введите температуру:"))
+
+if t > 20 and t < 30:
+ is_rainy = input("Есть ли осадки?: ")
+ 
+ if is_rainy == "da":
+     vesh = "Футболку, шорту, дождевик"
+ else:
+     vesh = "Футболку, шорты"
+
+else:
+    temperature = input("Температура больше 0 градусов?: ")
+    if temperature == "da":
+        
+        is_rainy = input("Есть ли осадки?: ")
+        if is_rainy == "da":
+            
+            is_raining_heavily = input("Осадки сильные?: ")
+            if is_raining_heavily == "da":
+                vesh = "Пальто, резинки, зонт"
+            else:
+                vesh = "Пальто, дождевик"
+        
+        else:
+            vesh = "Пальто"
+     
+    else:
+         vesh = "Пуховик"
+     
+
+print("Наденьте",vesh)
+         
