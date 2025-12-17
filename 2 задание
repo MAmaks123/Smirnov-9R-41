@@ -1,0 +1,43 @@
+pool = """
+|1|2|3|
+|4|5|6|
+|7|8|9|"""
+
+t = True
+com = ""
+com1 = ""
+nums = "123456789"
+print(pool)
+
+while t:
+    x = input("Куда поставить крест? ")
+    while x not in nums:
+        x = input("Позиция занята! Куда поставить крест?")
+    pool = pool.replace(x,"x")
+    nums = nums.replace(x,"")
+    com += x
+    print(pool)
+    
+    if nums == "":
+        print("Ничья")
+    if ("1" in com and "2" in com and "3" in com) or ("4" in com and "5" in com and "6" in com) or ("7" in com and "8" in com and "9" in com) or ("1" in com and "4" in com and "7" in com) or ("2" in com and "5" in com and "8" in com) or ("3" in com and "6" in com and "9" in com) or ("1" in com and "5" in com and "9" in com) or ("3" in com and "5" in com and "7" in com):
+        print("Победил крест")
+        break
+        
+        
+    y = input("Куда поставить ноль? ")
+    while y not in nums:
+        y = input("Позиция занята! Куда поставить ноль?")
+    pool = pool.replace(y,"o")
+    nums = nums.replace(y,"")
+    com1 += y
+    print(pool)
+    
+    if nums == "":
+        print("Ничья")
+    if ("1" in com1 and "2" in com1 and "3" in com1) or ("4" in com1 and "5" in com1 and "6" in com1) or ("7" in com1 and "8" in com1 and "9" in com1) or ("1" in com1 and "4" in com1 and "7" in com1) or ("2" in com1 and "5" in com1 and "8" in com1) or ("3" in com1 and "6" in com1 and "9" in com1) or ("1" in com1 and "5" in com1 and "9" in com1) or ("3" in com1 and "5" in com1 and "7" in com1):
+        print("Победил ноль")
+        break
+    
+        t = False
+print(pool)
